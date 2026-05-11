@@ -1,0 +1,9 @@
+{
+  "barcode_directory": "/home/user/barcodes",
+  "printer_name": "default",
+  "page_size": "A4",
+  "temp_directory": "/tmp/ozon_print",
+  "preview_command": "xdg-open",
+  "print_command": "lp",
+  "max_recent_files": 10
+}

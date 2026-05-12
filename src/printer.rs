@@ -37,10 +37,8 @@ impl Printer {
         
         #[cfg(target_os = "windows")]
         {
-            cmd.arg("/d").arg(&self.printer_name);
+            cmd.args(["/c", &format!("print /d:\"{}\" \"{}\"", self.printer_name, path.to_string_lossy())]);
         }
-
-        cmd.arg(path);
 
         let output = cmd.output()
             .map_err(|e| AppError::Print(format!("Failed to execute print command: {}", e)))?;
